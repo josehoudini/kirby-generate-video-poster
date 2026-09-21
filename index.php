@@ -36,9 +36,9 @@ Kirby::plugin('eriksiemund/generate-video-poster', [
                 ]);
             }
         },
-        'file.replace:after' => function ($file) {
-            if ($file->type() === 'video') {
-                $file->update([
+        'file.replace:after' => function ($newFile) {
+            if ($newFile->type() === 'video') {
+                $newFile->update([
                     'isposterrequired' => 1
                 ]);
             }
